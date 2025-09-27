@@ -1,0 +1,29 @@
+def add_line():
+    name_line = screen.textinput(prompt="Name: ", title="New line")
+    line_dot1_x = screen.numinput(prompt="X of dot 1: ", title="New Line")
+    line_dot1_y = screen.numinput(prompt="Y of dot 1: ", title="New Line")
+    line_dot1_z = screen.numinput(prompt="Z of dot 1: ", title="New Line")
+    line_dot2_x = screen.numinput(prompt="X of dot 2: ", title="New Line")
+    line_dot2_y = screen.numinput(prompt="Y of dot 2: ", title="New Line")
+    line_dot2_z = screen.numinput(prompt="Z of dot 2: ", title="New Line")
+    line_dot1_x = -(line_dot1_x * 20)
+    line_dot1_y = -(line_dot1_y * 20)
+    line_dot1_z = line_dot1_z * 20
+    line_dot2_x = -(line_dot2_x * 20)
+    line_dot2_y = -(line_dot2_y * 20)
+    line_dot2_z = line_dot2_z * 20
+
+    def line(name, onex, oney, onez, twox, twoy, twoz):
+        t.penup()
+        t.goto(onex, oney)
+        t.pendown()
+        t.goto(twox, twoy)
+        t.write(name + "1")
+        t.penup()
+        t.goto(onex, onez)
+        t.pendown()
+        t.goto(twox, twoz)
+        t.write(name + "2")
+        t.penup()
+
+    line(name_line, line_dot1_x, line_dot1_y, line_dot1_z, line_dot2_x, line_dot2_y, line_dot2_z)
